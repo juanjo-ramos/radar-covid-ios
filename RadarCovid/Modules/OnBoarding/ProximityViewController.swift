@@ -18,14 +18,14 @@ class ProximityViewController: UIViewController {
 
     @IBOutlet weak var continueButton: UIButton!
 
-    var router: AppRouter?
+    var router: AppRouter!
     var radarStatusUseCase: RadarStatusUseCase?
 
     @IBAction func onContinue(_ sender: Any) {
         if radarStatusUseCase!.isTracingInit() {
-            router!.route(to: .activatePush, from: self)
+            router.route(to: .activatePush, from: self)
         } else {
-            router!.route(to: .activateCovid, from: self)
+            router.route(to: .activateCovid, from: self)
         }
     }
 

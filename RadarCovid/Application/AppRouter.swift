@@ -38,18 +38,18 @@ public enum Routes {
 
 class AppRouter: Router {
 
-    var proxymityVC: ProximityViewController?
-    var onBoardingVC: OnBoardingViewController?
-    var rootVC: RootViewController?
-    var tabBarController: TabBarController?
-    var myHealthVC: MyHealthViewController?
-    var myHealthReportedVC: MyHealthReportedViewController?
-    var expositionVC: ExpositionViewController?
-    var highExpositionVC: HighExpositionViewController?
-    var positiveExposedVC: PositiveExposedViewController?
-    var welcomeVC: WelcomeViewController?
-    var activateCovid: ActivateCovidNotificationViewController?
-    var activatePush: ActivatePushNotificationViewController?
+    var proxymityVC: ProximityViewController!
+    var onBoardingVC: OnBoardingViewController!
+    var rootVC: RootViewController!
+    var tabBarController: TabBarController!
+    var myHealthVC: MyHealthViewController!
+    var myHealthReportedVC: MyHealthReportedViewController!
+    var expositionVC: ExpositionViewController!
+    var highExpositionVC: HighExpositionViewController!
+    var positiveExposedVC: PositiveExposedViewController!
+    var welcomeVC: WelcomeViewController!
+    var activateCovid: ActivateCovidNotificationViewController!
+    var activatePush: ActivatePushNotificationViewController!
 
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
@@ -81,7 +81,7 @@ class AppRouter: Router {
     }
 
     private func routeToOnboarding(_ context: UIViewController) {
-        context.navigationController?.pushViewController(onBoardingVC!, animated: true)
+        context.navigationController?.pushViewController(onBoardingVC, animated: true)
     }
 
     private func routeToRoot(_ context: UIViewController) {
@@ -89,46 +89,46 @@ class AppRouter: Router {
     }
 
     private func routeToHome(_ context: UIViewController) {
-        loadViewAsRoot(navController: context.navigationController, view: tabBarController!)
+        loadViewAsRoot(navController: context.navigationController, view: tabBarController)
     }
 
     private func routeToProximity(_ context: UIViewController) {
-        context.navigationController?.pushViewController(proxymityVC!, animated: true)
+        context.navigationController?.pushViewController(proxymityVC, animated: true)
     }
 
     private func routeToCovid(_ context: UIViewController) {
-       context.navigationController?.pushViewController(activateCovid!, animated: true)
+       context.navigationController?.pushViewController(activateCovid, animated: true)
     }
 
     private func routeToPush(_ context: UIViewController) {
-       context.navigationController?.pushViewController(activatePush!, animated: true)
+       context.navigationController?.pushViewController(activatePush, animated: true)
     }
 
     private func routeToMyHealth(_ context: UIViewController) {
-        context.navigationController?.pushViewController(myHealthVC!, animated: true)
+        context.navigationController?.pushViewController(myHealthVC, animated: true)
     }
 
     private func routeToMyHealthReported(_ context: UIViewController) {
-        context.navigationController?.pushViewController(myHealthReportedVC!, animated: true)
+        context.navigationController?.pushViewController(myHealthReportedVC, animated: true)
     }
 
     private func routeToExposition(_ context: UIViewController, lastCheck: Date?) {
         expositionVC?.lastCheck = lastCheck
-        context.navigationController?.pushViewController(expositionVC!, animated: true)
+        context.navigationController?.pushViewController(expositionVC, animated: true)
     }
 
     private func routeToHighExposition(_ context: UIViewController, since: Date?) {
         highExpositionVC?.since = since
-        context.navigationController?.pushViewController(highExpositionVC!, animated: true)
+        context.navigationController?.pushViewController(highExpositionVC, animated: true)
     }
 
     private func routeToPositiveExposed(_ context: UIViewController, since: Date?) {
         positiveExposedVC?.since = since
-        context.navigationController?.pushViewController(positiveExposedVC!, animated: true)
+        context.navigationController?.pushViewController(positiveExposedVC, animated: true)
     }
 
     private func routeToWelcome(_ context: UIViewController) {
-        loadViewAsRoot(navController: context.navigationController, view: welcomeVC!)
+        loadViewAsRoot(navController: context.navigationController, view: welcomeVC)
     }
 
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController, animated: Bool = false) {
