@@ -61,7 +61,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
         subject.asObservable()
     }
 
-    func getExpositionInfoFromRepository() -> ExpositionInfo! {
+    func getExpositionInfoFromRepository() -> ExpositionInfo {
         return expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .healthy)
     }
 

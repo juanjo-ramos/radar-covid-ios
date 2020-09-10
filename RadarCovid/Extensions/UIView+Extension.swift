@@ -26,9 +26,9 @@ extension UIView {
         )?.first as? TransparentView
 
         transparentView?.frame = self.frame
-        transparentView!.backgroundColor = color
-        transparentView!.alpha = 0
-        transparentView!.tag = 1111
+        transparentView?.backgroundColor = color
+        transparentView?.alpha = 0
+        transparentView?.tag = 1111
         if let messageView = transparentView?.messageView {
             if let regularText = message {
                 messageView.text = regularText

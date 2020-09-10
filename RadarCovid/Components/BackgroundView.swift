@@ -19,7 +19,7 @@ class BackgroundView: UIView {
     var colors: [CGColor]? {
         didSet {
             gradient = CAGradientLayer()
-            gradient!.colors = colors
+            gradient?.colors = colors
         }
     }
 
@@ -29,7 +29,7 @@ class BackgroundView: UIView {
                 imageView.removeFromSuperview()
             }
             imageView = UIImageView(frame: self.bounds)
-            imageView!.image = image
+            imageView?.image = image
             draw(self.bounds)
         }
     }

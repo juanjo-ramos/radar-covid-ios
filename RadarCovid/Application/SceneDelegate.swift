@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
-        let router = AppDelegate.shared?.injection.resolve(AppRouter.self)!
+        let router = AppDelegate.shared?.injection.resolve(AppRouter.self)
 
         router?.route(to: Routes.root, from: navigationController)
 
