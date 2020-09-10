@@ -36,13 +36,13 @@ open class TokenAPI {
      Get application UUID token
      - returns: Observable<UuidDto>
      */
-    open func getUuid() -> Observable<UuidDto> {
+    open func getUuid() -> Observable<UuidDto?> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getUuid { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }

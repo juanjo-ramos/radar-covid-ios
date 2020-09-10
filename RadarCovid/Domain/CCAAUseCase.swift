@@ -28,7 +28,7 @@ class CCAAUseCase {
             let locale = self?.localizationRepository.getLocale()
             return self?.masterDataApi.getCcaa(locale: locale,additionalInfo: true).map { values in
                 var ccaa : [CaData] = []
-                values.forEach { v in
+                values?.forEach { v in
                     if let ca = self?.mapCa(v) {
                         ccaa.append(ca)
                     }

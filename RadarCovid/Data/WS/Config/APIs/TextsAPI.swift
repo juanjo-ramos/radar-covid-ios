@@ -40,13 +40,13 @@ open class TextsAPI {
      - parameter locale: (query)  (optional, default to es-ES)
      - returns: Observable<TextCustomMap>
      */
-    open func getTexts(ccaa: String? = nil, locale: String? = nil) -> Observable<TextCustomMap> {
+    open func getTexts(ccaa: String? = nil, locale: String? = nil) -> Observable<TextCustomMap?> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getTexts(ccaa: ccaa, locale: locale) { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }

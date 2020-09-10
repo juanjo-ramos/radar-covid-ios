@@ -36,13 +36,13 @@ open class SettingsAPI {
      Get application settings
      - returns: Observable<[SettingsDto]>
      */
-    open func getSettings() -> Observable<SettingsDto> {
+    open func getSettings() -> Observable<SettingsDto?> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getSettings { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }

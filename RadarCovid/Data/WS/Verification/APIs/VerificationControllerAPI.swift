@@ -38,13 +38,13 @@ open class VerificationControllerAPI {
      - parameter body: (body)
      - returns: Observable<TokenResponse>
      */
-    open func verifyCode(body: Code) -> Observable<TokenResponse> {
+    open func verifyCode(body: Code) -> Observable<TokenResponse?> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.verifyCode(body: body) {  data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }

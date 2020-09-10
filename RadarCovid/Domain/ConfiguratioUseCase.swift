@@ -52,7 +52,7 @@ class ConfigurationUseCase {
             if let settings = self.settingsRepository.getSettings() {
                 return .just(settings.udid)
             }
-            return self.tokenApi.getUuid().map { udid in udid.uuid }
+            return self.tokenApi.getUuid().compactMap { udid in udid?.uuid }
         }
     }
 

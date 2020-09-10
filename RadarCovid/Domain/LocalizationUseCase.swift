@@ -36,11 +36,11 @@ class LocalizationUseCase: LocalizationSource {
         return .deferred { [weak self] in
             let cau = self?.localizationRepository.getCurrentCA()?.id
             let locale = self?.localizationRepository.getLocale()
-            return self?.textsApi.getTexts(ccaa: cau, locale: locale).map { texts in
-                let texts = texts.additionalProperties
+            return self?.textsApi.getTexts(ccaa: cau, locale: locale).compactMap { texts in
+                let texts = texts?.additionalProperties
                 self?._localizationMap = texts
                 self?.localizationRepository.setTexts(texts)
-                print(texts)
+                print(texts ?? [])
                 return texts
             }.catchError { [weak self] error -> Observable<[String: String]?> in
                 guard let localization = self?.localizationMap else {

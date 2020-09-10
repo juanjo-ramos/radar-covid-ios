@@ -29,7 +29,7 @@ class LocalesUseCase {
         let currentLocale = localizationRepository.getLocale()
         return masterDataApi.getLocales(locale: currentLocale).map { [weak self] masterLocales in
             var locales: [String: String?] = [:]
-            masterLocales.forEach { loc in
+            masterLocales?.forEach { loc in
                 if let localId = loc.id {
                     locales[localId] = loc.description
                 }

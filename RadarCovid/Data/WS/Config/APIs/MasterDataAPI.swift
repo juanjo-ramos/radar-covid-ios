@@ -40,13 +40,13 @@ open class MasterDataAPI {
      - parameter additionalInfo: (query)  (optional, default to false)
      - returns: Observable<[CcaaKeyValueDto]>
      */
-    open func getCcaa(locale: String? = nil, additionalInfo: Bool = true) -> Observable<[CcaaKeyValueDto]> {
+    open func getCcaa(locale: String? = nil, additionalInfo: Bool = true) -> Observable<[CcaaKeyValueDto]?> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getCcaa(locale: locale, additionalInfo: additionalInfo) { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }
@@ -108,14 +108,14 @@ open class MasterDataAPI {
      - parameter locale: (query)  (optional, default to es-ES)
      - returns: Observable<[KeyValueDto]>
      */
-    open func getLocales(locale: String? = nil) -> Observable<[KeyValueDto]> {
+    open func getLocales(locale: String? = nil) -> Observable<[KeyValueDto]?> {
         return Observable.create { [weak self] observer -> Disposable in
 
             self?.getLocales(locale: locale) { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
-                    observer.on(.next(data!))
+                    observer.on(.next(data))
                 }
                 observer.on(.completed)
             }
