@@ -43,8 +43,9 @@ extension UIView {
             messageView.textAlignment = .center
         }
         DispatchQueue.main.async { [weak self] in
-            self?.addSubview(transparentView!)
-            transparentView?.fadeIn(alpha)
+            guard let transparentView = transparentView else { return }
+            self?.addSubview(transparentView)
+            transparentView.fadeIn(alpha)
         }
     }
 

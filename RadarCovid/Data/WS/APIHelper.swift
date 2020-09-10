@@ -28,7 +28,11 @@ public struct APIHelper {
     public static func rejectNilHeaders(_ source: [String: Any?]) -> [String: String] {
         return source.reduce(into: [String: String]()) { (result, item) in
             if let collection = item.value as? [Any?] {
-                result[item.key] = collection.filter({ $0 != nil }).map { "\($0!)" }.joined(separator: ",")
+                result[item.key] = collection.compactMap { value in
+                    guard let value = value else { return nil }
+                    return "\(value)"
+                }
+                .joined(separator: ",")
             } else if let value: Any = item.value {
                 result[item.key] = "\(value)"
             }
@@ -53,7 +57,11 @@ public struct APIHelper {
     public static func mapValuesToQueryItems(_ source: [String: Any?]) -> [URLQueryItem]? {
         let destination = source.filter({ $0.value != nil}).reduce(into: [URLQueryItem]()) { (result, item) in
             if let collection = item.value as? [Any?] {
-                let value = collection.filter({ $0 != nil }).map({"\($0!)"}).joined(separator: ",")
+                let value = collection.compactMap { value in
+                    guard let value = value else { return nil }
+                    return "\(value)"
+                }
+                .joined(separator: ",")
                 result.append(URLQueryItem(name: item.key, value: value))
             } else if let value = item.value {
                 result.append(URLQueryItem(name: item.key, value: "\(value)"))

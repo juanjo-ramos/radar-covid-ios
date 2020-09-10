@@ -91,8 +91,13 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
         let encoding: ParameterEncoding = isBody ? JSONDataEncoding() : URLEncoding()
 
         let xMethod = Alamofire.HTTPMethod(rawValue: method)
-        let fileKeys = parameters == nil ? [] : parameters!.filter { $1 is NSURL }
-                                                           .map { $0.0 }
+        let fileKeys: [String]
+        if let parameters = parameters {
+            fileKeys = parameters.filter { $1 is NSURL }
+                .map { $0.0 }
+        } else {
+            fileKeys = []
+        }
 
         if fileKeys.count > 0 {
             manager.upload(multipartFormData: { mpForm in

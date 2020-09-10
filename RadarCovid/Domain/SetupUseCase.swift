@@ -37,7 +37,9 @@ class SetupUseCase: LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
 
     func initializeSDK() throws {
 
-        let url = URL(string: Config.endpoints.dpppt)!
+        guard let url = URL(string: Config.endpoints.dpppt) else {
+            throw DomainError.Unexpected
+        }
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self

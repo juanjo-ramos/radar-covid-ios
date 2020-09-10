@@ -19,7 +19,7 @@ protocol LocalizationRepository {
     func getLocales() -> [String: String?]?
     func setLocales(_ locales: [String: String?])
 
-    func setTexts(_ texts: [String: String])
+    func setTexts(_ texts: [String: String]?)
     func getTexts() -> [String: String]?
 
     func setCurrent(ca: CaData)
@@ -50,7 +50,7 @@ class UserDefaultsLocalizationRepository: LocalizationRepository {
          userDefaults.set(locale, forKey: UserDefaultsLocalizationRepository.kLocale)
     }
 
-    func setTexts(_ texts: [String: String]) {
+    func setTexts(_ texts: [String: String]?) {
         userDefaults.set(texts, forKey: UserDefaultsLocalizationRepository.kTexts)
     }
 
