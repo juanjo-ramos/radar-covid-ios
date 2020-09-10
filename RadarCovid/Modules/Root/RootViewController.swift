@@ -80,7 +80,7 @@ class RootViewController: UIViewController {
         if onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false {
             router?.route(to: Routes.home, from: self)
         } else {
-            router!.route(to: Routes.welcome, from: self)
+            router?.route(to: Routes.welcome, from: self)
         }
     }
 
