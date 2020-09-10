@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         debugPrint("Current Environment: \(Config.environment)")
 
-        let setupUseCase = injection.resolve(SetupUseCase.self)!
+        guard let setupUseCase = injection.resolve(SetupUseCase.self) else {
+            fatalError("SetupUseCase could not be resolved. The application must terminate")
+        }
 
         do {
             try setupUseCase.initializeSDK()

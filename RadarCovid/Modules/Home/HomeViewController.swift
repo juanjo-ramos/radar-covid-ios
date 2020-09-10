@@ -94,7 +94,10 @@ class HomeViewController: UIViewController {
             message: "HOME_COVID_NOTIFICATION_POPUP_INACTIVE".localized,
             buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localized,
             buttonVoiceover: "ACC_HINT".localized) { (_) in
-                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                guard let settingURL = URL(string: UIApplication.openSettingsURLString) else {
+                    fatalError("Settings url could not be determined")
+                }
+                UIApplication.shared.open(settingURL)
         }
     }
     
