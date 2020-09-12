@@ -74,6 +74,61 @@ class MockResetDataUseCase : ResetDataUseCase {
     
 }
 
+class MockPreferencesRepository: PreferencesRepository {
+    
+    private let preferences: MockPreferences
+    
+    init(preferences: MockPreferences) {
+        self.preferences = preferences
+    }
+    
+    func isOnBoardingCompleted() -> Bool {
+        preferences.isOnBoardingCompleted
+    }
+    
+    func isTimeExposedDismissed() -> Bool {
+        preferences.isTimeExposedDismissed
+    }
+    
+    func setOnboarding(completed: Bool) { }
+    
+    func setTimeExposedDismissed(dismissed: Bool) { }
+    
+    func isTracingActive() -> Bool {
+        preferences.isTracingActive
+    }
+    
+    func setTracing(active: Bool) { }
+
+    func getLastSync() -> Date? {
+        preferences.lastSync
+    }
+    
+    func setLastSync(date: Date) { }
+
+    func isTracingInit() -> Bool {
+        preferences.isTracingInit
+    }
+    func setTracing(initialized: Bool) { }
+}
+
+struct MockPreferences {
+    
+    let isOnBoardingCompleted: Bool
+    let isTimeExposedDismissed: Bool
+    let isTracingActive: Bool
+    let lastSync: Date?
+    let isTracingInit: Bool
+    
+    init(isOnBoardingCompleted: Bool = true, isTimeExposedDismissed: Bool = false, isTracingActive: Bool = true, lastSync: Date? = nil, isTracingInit: Bool = true) {
+        self.isOnBoardingCompleted = isOnBoardingCompleted
+        self.isTimeExposedDismissed = isTimeExposedDismissed
+        self.isTracingActive = isTracingActive
+        self.lastSync = lastSync
+        self.isTracingInit = isTracingInit
+    }
+}
+
 class AlertControllerMock: AlertController {
     
     var showAlertOkCalls: Int = 0
