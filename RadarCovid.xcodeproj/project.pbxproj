@@ -159,6 +159,7 @@
 		76D9BD4524A8996700BA6697 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BD4424A8996700BA6697 /* UIView+Extension.swift */; };
 		76D9BD4724A8CA8800BA6697 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BD4624A8CA8800BA6697 /* UIColor+Extension.swift */; };
 		76D9BD4D24A950CF00BA6697 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BD4C24A950CF00BA6697 /* Date+Extension.swift */; };
+		8183054A250CE88000C73755 /* SyncUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81830549250CE88000C73755 /* SyncUseCaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +328,7 @@
 		76D9BD4424A8996700BA6697 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		76D9BD4624A8CA8800BA6697 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		76D9BD4C24A950CF00BA6697 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		81830549250CE88000C73755 /* SyncUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,9 +509,10 @@
 			children = (
 				6D64132224ED88AB00B33427 /* Info.plist */,
 				6D64132C24ED897300B33427 /* ExpositionCheckUseCaseTest.swift */,
-				6D64132B24ED897200B33427 /* RadarCovidTests-Bridging-Header.h */,
-				6D01BDCE24EFEFCB00FBADB4 /* MyMocks.swift */,
 				6D9F3A8F25029C5C005EE842 /* ErrorHandlerTest.swift */,
+				6D01BDCE24EFEFCB00FBADB4 /* MyMocks.swift */,
+				6D64132B24ED897200B33427 /* RadarCovidTests-Bridging-Header.h */,
+				81830549250CE88000C73755 /* SyncUseCaseTest.swift */,
 			);
 			path = RadarCovidTests;
 			sourceTree = "<group>";
@@ -1048,6 +1051,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8183054A250CE88000C73755 /* SyncUseCaseTest.swift in Sources */,
 				6D01BDCF24EFEFCB00FBADB4 /* MyMocks.swift in Sources */,
 				6D9F3A9025029C5C005EE842 /* ErrorHandlerTest.swift in Sources */,
 				6D64132D24ED897300B33427 /* ExpositionCheckUseCaseTest.swift in Sources */,
