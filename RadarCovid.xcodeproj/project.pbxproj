@@ -160,6 +160,7 @@
 		76D9BD4724A8CA8800BA6697 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BD4624A8CA8800BA6697 /* UIColor+Extension.swift */; };
 		76D9BD4D24A950CF00BA6697 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BD4C24A950CF00BA6697 /* Date+Extension.swift */; };
 		8183054A250CE88000C73755 /* SyncUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81830549250CE88000C73755 /* SyncUseCaseTest.swift */; };
+		8183054D250CF4CA00C73755 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183054C250CF4CA00C73755 /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +330,7 @@
 		76D9BD4624A8CA8800BA6697 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		76D9BD4C24A950CF00BA6697 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		81830549250CE88000C73755 /* SyncUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUseCaseTest.swift; sourceTree = "<group>"; };
+		8183054C250CF4CA00C73755 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +509,7 @@
 		6D64131F24ED88AB00B33427 /* RadarCovidTests */ = {
 			isa = PBXGroup;
 			children = (
+				8183054B250CF4B200C73755 /* Extensions */,
 				6D64132224ED88AB00B33427 /* Info.plist */,
 				6D64132C24ED897300B33427 /* ExpositionCheckUseCaseTest.swift */,
 				6D9F3A8F25029C5C005EE842 /* ErrorHandlerTest.swift */,
@@ -788,6 +791,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		8183054B250CF4B200C73755 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8183054C250CF4CA00C73755 /* XCTestCase+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1053,6 +1064,7 @@
 			files = (
 				8183054A250CE88000C73755 /* SyncUseCaseTest.swift in Sources */,
 				6D01BDCF24EFEFCB00FBADB4 /* MyMocks.swift in Sources */,
+				8183054D250CF4CA00C73755 /* XCTestCase+Extensions.swift in Sources */,
 				6D9F3A9025029C5C005EE842 /* ErrorHandlerTest.swift in Sources */,
 				6D64132D24ED897300B33427 /* ExpositionCheckUseCaseTest.swift in Sources */,
 			);

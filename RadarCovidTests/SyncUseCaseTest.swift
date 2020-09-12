@@ -14,15 +14,6 @@ import XCTest
 
 @testable import Radar_COVID
 
-extension XCTestCase {
-    
-    enum EventTypes: String {
-        case onNext = "OnNext"
-        case onError = "OnError"
-        case onCompleted = "OnCompleted"
-    }
-}
-
 class SyncUseCaseTest: XCTestCase {
     
     private var disposeBag: DisposeBag!
